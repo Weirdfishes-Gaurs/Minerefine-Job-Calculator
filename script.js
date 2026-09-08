@@ -137,10 +137,10 @@ function calculate() {
         return;
     }
 
-    const path = progression.slice(
-        startIndex,
-        endIndex + 1
-    );
+const path = progression.slice(
+    startIndex + 1,
+    endIndex + 1
+);
 
     let totalBlocks = 0;
     let bossCredits = 0;
