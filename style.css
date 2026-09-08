@@ -212,3 +212,9 @@ button {
         grid-template-columns: 1fr;
     }
 }
+
+.field small {
+    color: #737983;
+    font-size: 12px;
+    line-height: 1.4;
+}
