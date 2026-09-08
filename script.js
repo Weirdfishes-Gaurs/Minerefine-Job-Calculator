@@ -128,14 +128,14 @@ function calculate() {
         stage => stage.id === toStageSelect.value
     );
 
-    if (
-        startIndex < 0 ||
-        endIndex < 0 ||
-        endIndex < startIndex
-    ) {
-        showInvalidPath();
-        return;
-    }
+if (
+    startIndex < 0 ||
+    endIndex < 0 ||
+    endIndex < startIndex
+) {
+    showInvalidPath();
+    return;
+}
 
 const path = progression.slice(
     startIndex + 1,
