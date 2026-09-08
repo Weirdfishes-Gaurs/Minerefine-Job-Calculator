@@ -383,7 +383,7 @@ function setUsefulDefaults() {
 }
 
 blockRateSelect.addEventListener(
-    "change",
+    "input",
     calculate
 );
 
