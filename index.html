@@ -20,15 +20,23 @@
 
         <section class="calculator">
 
-            <div class="field">
-                <label for="blockRate">Block Rate</label>
+<div class="field">
+    <label for="blockRate">Block Rate</label>
 
-                <select id="blockRate">
-                    <option value="150000000">150m / credit</option>
-                    <option value="200000000" selected>200m / credit</option>
-                    <option value="250000000">250m / credit</option>
-                </select>
-            </div>
+    <div class="input-unit">
+        <input
+            type="number"
+            id="blockRate"
+            value="200"
+            min="0.01"
+            step="0.01"
+            placeholder="200"
+        >
+        <span>m/c</span>
+    </div>
+
+    <small>Millions of blocks per credit.</small>
+</div>
 
 <div class="field">
     <label for="fromStage">Current Stage</label>
