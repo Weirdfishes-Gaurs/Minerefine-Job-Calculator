@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Minecraft Job Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <h1>Minecraft Job Calculator</h1>
+            <p>Calculate upgrade costs between mines and bosses.</p>
+        </header>
+
+        <section class="calculator">
+
+            <div class="field">
+                <label for="blockRate">Block Rate</label>
+
+                <select id="blockRate">
+                    <option value="150000000">150m / credit</option>
+                    <option value="200000000" selected>200m / credit</option>
+                    <option value="250000000">250m / credit</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="fromStage">From</label>
+                <select id="fromStage"></select>
+            </div>
+
+            <div class="field">
+                <label for="toStage">To</label>
+                <select id="toStage"></select>
+            </div>
+
+            <div class="field">
+                <label for="gear">Gear</label>
+
+                <select id="gear">
+                    <option value="all">All Gear</option>
+                    <option value="sword">Sword</option>
+                    <option value="tool">Tool</option>
+                    <option value="armor">Armor</option>
+                    <option value="charm">Charm</option>
+                </select>
+            </div>
+
+        </section>
+
+        <section class="results">
+
+            <div class="result-card">
+                <span>Mining Blocks</span>
+                <strong id="totalBlocks">0</strong>
+            </div>
+
+            <div class="result-card">
+                <span>Mining Cost</span>
+                <strong id="miningCredits">0c</strong>
+            </div>
+
+            <div class="result-card">
+                <span>Boss Cost</span>
+                <strong id="bossCredits">0c</strong>
+            </div>
+
+            <div class="result-card total">
+                <span>Total Cost</span>
+                <strong id="totalCredits">0c</strong>
+            </div>
+
+        </section>
+
+        <section class="breakdown-section">
+
+            <div class="breakdown-header">
+                <h2>Upgrade Path</h2>
+
+                <button id="toggleBreakdown">
+                    Hide
+                </button>
+            </div>
+
+            <div id="breakdown"></div>
+
+        </section>
+
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
