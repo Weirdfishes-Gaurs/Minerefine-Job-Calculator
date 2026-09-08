@@ -117,8 +117,7 @@ function selectedItemEntries(stage, selectedGear) {
 }
 
 function calculate() {
-const blockRate =
-    Number(blockRateSelect.value) * 1_000_000;
+const blockRate = Number(blockRateSelect.value) * 1_000_000;
     const selectedGear = gearSelect.value;
 
     const startIndex = progression.findIndex(
