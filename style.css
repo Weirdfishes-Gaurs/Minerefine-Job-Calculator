@@ -299,3 +299,43 @@ button {
     border-color: #5865f2;
     background: #20243a;
 }
+.normal-input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    color: #f2f2f2;
+    background: #0f1115;
+
+    border: 1px solid #343943;
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.normal-input:focus {
+    border-color: #5865f2;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(88, 101, 242, 0.12);
+}
+
+.quick-results {
+    grid-template-columns:
+        repeat(2, 1fr);
+}
+
+@media (max-width: 600px) {
+
+    .quick-results {
+        grid-template-columns: 1fr;
+    }
+
+}
