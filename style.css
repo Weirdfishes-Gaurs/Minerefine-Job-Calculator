@@ -258,3 +258,44 @@ button {
 
     border-left: 1px solid #343943;
 }
+.site-nav {
+    width: min(900px, calc(100% - 32px));
+    margin: 22px auto 0;
+
+    display: flex;
+    gap: 8px;
+
+    overflow-x: auto;
+}
+
+.site-nav a {
+    padding: 10px 14px;
+
+    color: #949aa4;
+    text-decoration: none;
+
+    background: #15181d;
+    border: 1px solid #272b32;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.site-nav a:hover {
+    color: #ffffff;
+    background: #1c2026;
+}
+
+.site-nav a.active {
+    color: #ffffff;
+    border-color: #5865f2;
+    background: #20243a;
+}
