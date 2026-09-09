@@ -11,7 +11,7 @@
 
     <title>Minecraft Job Calculator</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
@@ -49,18 +49,21 @@
                     Block Rate
                 </label>
 
-                <div class="input-unit">
+                <div class="rate-control">
 
                     <input
-                        type="number"
                         id="blockRate"
+                        type="number"
                         value="200"
                         min="0.01"
                         step="0.01"
                         placeholder="200"
                     >
 
-                    <span>m/c</span>
+                    <div class="rate-unit">
+                        <strong>m</strong>
+                        <span>/ credit</span>
+                    </div>
 
                 </div>
 
@@ -101,136 +104,139 @@
             </div>
 
 
-<div class="field gear-field">
+            <div class="field gear-field">
 
-    <label>
-        Gear
-    </label>
+                <label>
+                    Gear
+                </label>
 
-    <div class="gear-selector" id="gearSelector">
-
-        <label class="gear-choice all-choice">
-
-            <input
-                type="checkbox"
-                id="gearAll"
-                value="all"
-                checked
-            >
-
-            <span>
-                All Gear
-            </span>
-
-        </label>
-
-
-        <div class="gear-choice-grid">
-
-            <label class="gear-choice">
-
-                <input
-                    type="checkbox"
-                    class="gear-checkbox"
-                    value="sword"
-                    disabled
+                <div
+                    class="gear-selector"
+                    id="gearSelector"
                 >
 
-                <span>
-                    Sword
-                </span>
+                    <label class="gear-choice all-choice">
 
-            </label>
+                        <input
+                            type="checkbox"
+                            id="gearAll"
+                            value="all"
+                            checked
+                        >
 
+                        <span>
+                            All Gear
+                        </span>
 
-            <label class="gear-choice">
-
-                <input
-                    type="checkbox"
-                    class="gear-checkbox"
-                    value="pickaxe"
-                    disabled
-                >
-
-                <span>
-                    Pickaxe
-                </span>
-
-            </label>
+                    </label>
 
 
-            <label class="gear-choice">
+                    <div class="gear-choice-grid">
 
-                <input
-                    type="checkbox"
-                    class="gear-checkbox"
-                    value="axe"
-                    disabled
-                >
+                        <label class="gear-choice">
 
-                <span>
-                    Axe
-                </span>
+                            <input
+                                type="checkbox"
+                                class="gear-checkbox"
+                                value="sword"
+                                disabled
+                            >
 
-            </label>
+                            <span>
+                                Sword
+                            </span>
 
-
-            <label class="gear-choice">
-
-                <input
-                    type="checkbox"
-                    class="gear-checkbox"
-                    value="shovel"
-                    disabled
-                >
-
-                <span>
-                    Shovel
-                </span>
-
-            </label>
+                        </label>
 
 
-            <label class="gear-choice">
+                        <label class="gear-choice">
 
-                <input
-                    type="checkbox"
-                    class="gear-checkbox"
-                    value="armor"
-                    disabled
-                >
+                            <input
+                                type="checkbox"
+                                class="gear-checkbox"
+                                value="pickaxe"
+                                disabled
+                            >
 
-                <span>
-                    Armor
-                </span>
+                            <span>
+                                Pickaxe
+                            </span>
 
-            </label>
+                        </label>
 
 
-            <label class="gear-choice">
+                        <label class="gear-choice">
 
-                <input
-                    type="checkbox"
-                    class="gear-checkbox"
-                    value="charm"
-                    disabled
-                >
+                            <input
+                                type="checkbox"
+                                class="gear-checkbox"
+                                value="axe"
+                                disabled
+                            >
 
-                <span>
-                    Charm
-                </span>
+                            <span>
+                                Axe
+                            </span>
 
-            </label>
+                        </label>
 
-        </div>
 
-    </div>
+                        <label class="gear-choice">
 
-    <small>
-        Uncheck All Gear to choose specific items.
-    </small>
+                            <input
+                                type="checkbox"
+                                class="gear-checkbox"
+                                value="shovel"
+                                disabled
+                            >
 
-</div>
+                            <span>
+                                Shovel
+                            </span>
+
+                        </label>
+
+
+                        <label class="gear-choice">
+
+                            <input
+                                type="checkbox"
+                                class="gear-checkbox"
+                                value="armor"
+                                disabled
+                            >
+
+                            <span>
+                                Armor
+                            </span>
+
+                        </label>
+
+
+                        <label class="gear-choice">
+
+                            <input
+                                type="checkbox"
+                                class="gear-checkbox"
+                                value="charm"
+                                disabled
+                            >
+
+                            <span>
+                                Charm
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <small>
+                    Uncheck All Gear to choose specific items.
+                </small>
+
+            </div>
 
         </section>
 
@@ -312,8 +318,8 @@
     </main>
 
 
-<script src="data.js?v=2"></script>
-<script src="script.js?v=2"></script>
+    <script src="data.js?v=2"></script>
+    <script src="script.js?v=2"></script>
 
 </body>
 
