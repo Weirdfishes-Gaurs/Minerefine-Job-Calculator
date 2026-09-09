@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Credit Budget Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="site-nav">
+
+        <a href="index.html">
+            Upgrade Path
+        </a>
+
+        <a href="materials.html">
+            Materials → Credits
+        </a>
+
+        <a href="budget.html" class="active">
+            Credit Budget
+        </a>
+
+    </nav>
+
+    <main class="container">
+
+        <header>
+
+            <h1>Credit Budget</h1>
+
+            <p>
+                See how far your credits can take an item.
+            </p>
+
+        </header>
+
+        <section class="calculator">
+
+            <div class="field">
+
+                <label for="budgetCurrentStage">
+                    Current Stage
+                </label>
+
+                <select id="budgetCurrentStage"></select>
+
+                <small>
+                    This stage is already completed.
+                </small>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="creditBudget">
+                    Credits Available
+                </label>
+
+                <input
+                    id="creditBudget"
+                    class="normal-input"
+                    type="number"
+                    value="10"
+                    min="0"
+                    step="0.01"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="budgetGear">
+                    Gear
+                </label>
+
+                <select id="budgetGear">
+
+                    <option value="all">
+                        All Gear
+                    </option>
+
+                    <option value="sword">
+                        Sword
+                    </option>
+
+                    <option value="pickaxe">
+                        Pickaxe
+                    </option>
+
+                    <option value="axe">
+                        Axe
+                    </option>
+
+                    <option value="shovel">
+                        Shovel
+                    </option>
+
+                    <option value="armor">
+                        Armor
+                    </option>
+
+                    <option value="charm">
+                        Charm
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="budgetBlockRate">
+                    Block Rate
+                </label>
+
+                <div class="block-rate-input">
+
+                    <input
+                        id="budgetBlockRate"
+                        type="number"
+                        value="200"
+                        min="0.01"
+                        step="0.01"
+                    >
+
+                    <div class="block-rate-unit">
+
+                        <span>m</span>
+
+                        <small>
+                            / credit
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="results">
+
+            <div class="result-card total">
+
+                <span>You Can Reach</span>
+
+                <strong id="budgetReach">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <span>Credits Used</span>
+
+                <strong id="budgetUsed">
+                    0c
+                </strong>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <span>Credits Left</span>
+
+                <strong id="budgetLeft">
+                    0c
+                </strong>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <span>Next Upgrade</span>
+
+                <strong id="budgetNext">
+                    —
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <section class="breakdown-section">
+
+            <div class="breakdown-header">
+
+                <h2>Affordable Upgrades</h2>
+
+            </div>
+
+            <div id="budgetBreakdown"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="data.js"></script>
+    <script src="budget.js"></script>
+
+</body>
+
+</html>
