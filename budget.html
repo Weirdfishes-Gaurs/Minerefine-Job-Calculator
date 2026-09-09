@@ -138,28 +138,36 @@
                 </label>
 
                 <div class="block-rate-input">
+<div class="field">
 
-                    <input
-                        id="budgetBlockRate"
-                        type="number"
-                        value="200"
-                        min="0.01"
-                        step="0.01"
-                    >
+    <label for="budgetBlockRate">
+        Block Rate
+    </label>
 
-                    <div class="block-rate-unit">
+    <div class="rate-control">
 
-                        <span>m</span>
+        <input
+            id="budgetBlockRate"
+            type="number"
+            value="200"
+            min="0.01"
+            step="0.01"
+            placeholder="200"
+        >
 
-                        <small>
-                            / credit
-                        </small>
+        <div class="rate-unit">
+            <strong>m</strong>
+            <span>/ credit</span>
+        </div>
 
-                    </div>
+    </div>
 
-                </div>
+    <small>
+        Millions of blocks per credit.
+    </small>
 
-            </div>
+</div>
+
 
         </section>
 
