@@ -591,7 +591,7 @@ const progression = [
         "name": "Warp Wood",
         "items": {
             "sword": 1600000000,
-            "pickaxe": 1200000000,
+            "axe": 1200000000,
             "armor": 4600000000,
             "charm": 1000000000
         }
