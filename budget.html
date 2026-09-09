@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -12,8 +11,7 @@
 
     <title>Credit Budget Calculator</title>
 
-<link rel="stylesheet" href="style.css?v=3">
-
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body>
@@ -46,6 +44,7 @@
 
         </header>
 
+
         <section class="calculator">
 
             <div class="field">
@@ -63,31 +62,31 @@
             </div>
 
 
-<div class="field">
+            <div class="field">
 
-    <label for="creditBudget">
-        Credits Available
-    </label>
+                <label for="creditBudget">
+                    Credits Available
+                </label>
 
-    <div class="rate-control">
+                <div class="rate-control">
 
-        <input
-            id="creditBudget"
-            type="number"
-            value="10"
-            min="0"
-            step="0.01"
-            placeholder="10"
-        >
+                    <input
+                        id="creditBudget"
+                        type="number"
+                        value="10"
+                        min="0"
+                        step="0.01"
+                        placeholder="10"
+                    >
 
-        <div class="rate-unit">
-            <strong>c</strong>
-            <span>credits</span>
-        </div>
+                    <div class="rate-unit">
+                        <strong>c</strong>
+                        <span>credits</span>
+                    </div>
 
-    </div>
+                </div>
 
-</div>
+            </div>
 
 
             <div class="field">
@@ -137,37 +136,29 @@
                     Block Rate
                 </label>
 
-                <div class="block-rate-input">
-<div class="field">
+                <div class="rate-control">
 
-    <label for="budgetBlockRate">
-        Block Rate
-    </label>
+                    <input
+                        id="budgetBlockRate"
+                        type="number"
+                        value="200"
+                        min="0.01"
+                        step="0.01"
+                        placeholder="200"
+                    >
 
-    <div class="rate-control">
+                    <div class="rate-unit">
+                        <strong>m</strong>
+                        <span>/ credit</span>
+                    </div>
 
-        <input
-            id="budgetBlockRate"
-            type="number"
-            value="200"
-            min="0.01"
-            step="0.01"
-            placeholder="200"
-        >
+                </div>
 
-        <div class="rate-unit">
-            <strong>m</strong>
-            <span>/ credit</span>
-        </div>
+                <small>
+                    Millions of blocks per credit.
+                </small>
 
-    </div>
-
-    <small>
-        Millions of blocks per credit.
-    </small>
-
-</div>
-
+            </div>
 
         </section>
 
@@ -176,7 +167,9 @@
 
             <div class="result-card total">
 
-                <span>You Can Reach</span>
+                <span>
+                    You Can Reach
+                </span>
 
                 <strong id="budgetReach">
                     —
@@ -187,7 +180,9 @@
 
             <div class="result-card">
 
-                <span>Credits Used</span>
+                <span>
+                    Credits Used
+                </span>
 
                 <strong id="budgetUsed">
                     0c
@@ -198,7 +193,9 @@
 
             <div class="result-card">
 
-                <span>Credits Left</span>
+                <span>
+                    Credits Left
+                </span>
 
                 <strong id="budgetLeft">
                     0c
@@ -209,7 +206,9 @@
 
             <div class="result-card">
 
-                <span>Next Upgrade</span>
+                <span>
+                    Next Upgrade
+                </span>
 
                 <strong id="budgetNext">
                     —
@@ -224,7 +223,9 @@
 
             <div class="breakdown-header">
 
-                <h2>Affordable Upgrades</h2>
+                <h2>
+                    Affordable Upgrades
+                </h2>
 
             </div>
 
@@ -235,8 +236,8 @@
     </main>
 
 
-    <script src="data.js"></script>
-    <script src="budget.js"></script>
+    <script src="data.js?v=2"></script>
+    <script src="budget.js?v=2"></script>
 
 </body>
 
