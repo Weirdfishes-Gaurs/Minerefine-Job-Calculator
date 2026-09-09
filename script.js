@@ -3,7 +3,13 @@
 const blockRateSelect = document.getElementById("blockRate");
 const fromStageSelect = document.getElementById("fromStage");
 const toStageSelect = document.getElementById("toStage");
-const gearSelect = document.getElementById("gear");
+const gearAll =
+    document.getElementById("gearAll");
+
+const gearCheckboxes =
+    Array.from(
+        document.querySelectorAll(".gear-checkbox")
+    );
 
 const totalBlocksEl = document.getElementById("totalBlocks");
 const miningCreditsEl = document.getElementById("miningCredits");
