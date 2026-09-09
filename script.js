@@ -112,12 +112,63 @@ function populateToDropdown(preferredId = null) {
     }
 }
 
-function selectedItemEntries(stage, selectedGear) {
-    const entries = Object.entries(stage.items || {});
+function getSelectedGears() {
 
-    if (selectedGear === "all") {
+    if (gearAll.checked) {
+        return ["all"];
+    }
+
+    return gearCheckboxes
+        .filter(box => box.checked)
+        .map(box => box.value);
+}
+
+
+function selectedItemEntries(stage, selectedGears) {
+
+    const entries =
+        Object.entries(stage.items || {});
+
+
+    if (selectedGears.includes("all")) {
         return entries;
     }
+
+
+    const selectedItems = [];
+
+
+    for (const gear of selectedGears) {
+
+        let itemKey = gear;
+
+
+        // Axe and Shovel use the boss's Pickaxe/tool cost
+        if (
+            stage.type === "boss" &&
+            (
+                gear === "axe" ||
+                gear === "shovel"
+            )
+        ) {
+            itemKey = "pickaxe";
+        }
+
+
+        if (stage.items[itemKey] !== undefined) {
+
+            selectedItems.push([
+                gear,
+                stage.items[itemKey]
+            ]);
+
+        }
+
+    }
+
+
+    return selectedItems;
+}
 
     return entries.filter(([item]) => item === selectedGear);
 }
