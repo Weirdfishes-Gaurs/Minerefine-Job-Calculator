@@ -101,45 +101,136 @@
             </div>
 
 
-            <div class="field">
+<div class="field gear-field">
 
-                <label for="gear">
-                    Gear
-                </label>
+    <label>
+        Gear
+    </label>
 
-                <select id="gear">
+    <div class="gear-selector" id="gearSelector">
 
-                    <option value="all">
-                        All Gear
-                    </option>
+        <label class="gear-choice all-choice">
 
-                    <option value="sword">
-                        Sword
-                    </option>
+            <input
+                type="checkbox"
+                id="gearAll"
+                value="all"
+                checked
+            >
 
-                    <option value="pickaxe">
-                        Pickaxe
-                    </option>
+            <span>
+                All Gear
+            </span>
 
-                    <option value="axe">
-                        Axe
-                    </option>
+        </label>
 
-                    <option value="shovel">
-                        Shovel
-                    </option>
 
-                    <option value="armor">
-                        Armor
-                    </option>
+        <div class="gear-choice-grid">
 
-                    <option value="charm">
-                        Charm
-                    </option>
+            <label class="gear-choice">
 
-                </select>
+                <input
+                    type="checkbox"
+                    class="gear-checkbox"
+                    value="sword"
+                    disabled
+                >
 
-            </div>
+                <span>
+                    Sword
+                </span>
+
+            </label>
+
+
+            <label class="gear-choice">
+
+                <input
+                    type="checkbox"
+                    class="gear-checkbox"
+                    value="pickaxe"
+                    disabled
+                >
+
+                <span>
+                    Pickaxe
+                </span>
+
+            </label>
+
+
+            <label class="gear-choice">
+
+                <input
+                    type="checkbox"
+                    class="gear-checkbox"
+                    value="axe"
+                    disabled
+                >
+
+                <span>
+                    Axe
+                </span>
+
+            </label>
+
+
+            <label class="gear-choice">
+
+                <input
+                    type="checkbox"
+                    class="gear-checkbox"
+                    value="shovel"
+                    disabled
+                >
+
+                <span>
+                    Shovel
+                </span>
+
+            </label>
+
+
+            <label class="gear-choice">
+
+                <input
+                    type="checkbox"
+                    class="gear-checkbox"
+                    value="armor"
+                    disabled
+                >
+
+                <span>
+                    Armor
+                </span>
+
+            </label>
+
+
+            <label class="gear-choice">
+
+                <input
+                    type="checkbox"
+                    class="gear-checkbox"
+                    value="charm"
+                    disabled
+                >
+
+                <span>
+                    Charm
+                </span>
+
+            </label>
+
+        </div>
+
+    </div>
+
+    <small>
+        Uncheck All Gear to choose specific items.
+    </small>
+
+</div>
 
         </section>
 
