@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">        
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Minecraft Job Calculator</title>
 
@@ -11,92 +16,202 @@
 
 <body>
 
+    <nav class="site-nav">
+        <a href="index.html" class="active">
+            Upgrade Path
+        </a>
+
+        <a href="materials.html">
+            Materials → Credits
+        </a>
+
+        <a href="budget.html">
+            Credit Budget
+        </a>
+    </nav>
+
     <main class="container">
 
         <header>
             <h1>Minecraft Job Calculator</h1>
-            <p><p>Choose where you are now and where you want to go.</p>
+
+            <p>
+                Choose where you are now and where you want to go.
+            </p>
         </header>
+
 
         <section class="calculator">
 
-<div class="field">
-    <label for="blockRate">Block Rate</label>
-
-    <div class="input-unit">
-        <input
-            type="number"
-            id="blockRate"
-            value="200"
-            min="0.01"
-            step="0.01"
-            placeholder="200"
-        >
-        <span>m/c</span>
-    </div>
-
-    <small>Millions of blocks per credit.</small>
-</div>
-
-<div class="field">
-    <label for="fromStage">Current Stage</label>
-    <select id="fromStage"></select>
-    <small>You already have this stage completed.</small>
-</div>
-
-<div class="field">
-    <label for="toStage">Goal Stage</label>
-    <select id="toStage"></select>
-    <small>The last stage you want to upgrade to.</small>
-</div>
             <div class="field">
-                <label for="gear">Gear</label>
+
+                <label for="blockRate">
+                    Block Rate
+                </label>
+
+                <div class="input-unit">
+
+                    <input
+                        type="number"
+                        id="blockRate"
+                        value="200"
+                        min="0.01"
+                        step="0.01"
+                        placeholder="200"
+                    >
+
+                    <span>m/c</span>
+
+                </div>
+
+                <small>
+                    Millions of blocks per credit.
+                </small>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="fromStage">
+                    Current Stage
+                </label>
+
+                <select id="fromStage"></select>
+
+                <small>
+                    You already have this stage completed.
+                </small>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="toStage">
+                    Goal Stage
+                </label>
+
+                <select id="toStage"></select>
+
+                <small>
+                    The last stage you want to upgrade to.
+                </small>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="gear">
+                    Gear
+                </label>
 
                 <select id="gear">
-                    <option value="all">All Gear</option>
-                    <option value="sword">Sword</option>
-                    <option value="pickaxe">Pickaxe</option>
-                    <option value="axe">Axe</option>
-                    <option value="shovel">Shovel</option>
-                    <option value="armor">Armor</option>
-                    <option value="charm">Charm</option>
+
+                    <option value="all">
+                        All Gear
+                    </option>
+
+                    <option value="sword">
+                        Sword
+                    </option>
+
+                    <option value="pickaxe">
+                        Pickaxe
+                    </option>
+
+                    <option value="axe">
+                        Axe
+                    </option>
+
+                    <option value="shovel">
+                        Shovel
+                    </option>
+
+                    <option value="armor">
+                        Armor
+                    </option>
+
+                    <option value="charm">
+                        Charm
+                    </option>
+
                 </select>
+
             </div>
 
         </section>
+
 
         <section class="results">
 
             <div class="result-card">
-                <span>Mining Blocks</span>
-                <strong id="totalBlocks">0</strong>
+
+                <span>
+                    Mining Blocks
+                </span>
+
+                <strong id="totalBlocks">
+                    0
+                </strong>
+
             </div>
 
-            <div class="result-card">
-                <span>Mining Cost</span>
-                <strong id="miningCredits">0c</strong>
-            </div>
 
             <div class="result-card">
-                <span>Boss Cost</span>
-                <strong id="bossCredits">0c</strong>
+
+                <span>
+                    Mining Cost
+                </span>
+
+                <strong id="miningCredits">
+                    0c
+                </strong>
+
             </div>
+
+
+            <div class="result-card">
+
+                <span>
+                    Boss Cost
+                </span>
+
+                <strong id="bossCredits">
+                    0c
+                </strong>
+
+            </div>
+
 
             <div class="result-card total">
-                <span>Total Cost</span>
-                <strong id="totalCredits">0c</strong>
+
+                <span>
+                    Total Cost
+                </span>
+
+                <strong id="totalCredits">
+                    0c
+                </strong>
+
             </div>
 
         </section>
 
+
         <section class="breakdown-section">
 
             <div class="breakdown-header">
-                <h2>Upgrade Path</h2>
+
+                <h2>
+                    Upgrade Path
+                </h2>
 
                 <button id="toggleBreakdown">
                     Hide
                 </button>
+
             </div>
 
             <div id="breakdown"></div>
@@ -105,8 +220,10 @@
 
     </main>
 
+
     <script src="data.js"></script>
     <script src="script.js"></script>
 
 </body>
+
 </html>
