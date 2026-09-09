@@ -495,3 +495,74 @@ button {
     }
 
 }
+.rate-control {
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+    min-height: 50px;
+
+    background: #0f1115;
+    border: 1px solid #343943;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.rate-control:hover {
+    border-color: #444a55;
+}
+
+.rate-control:focus-within {
+    border-color: #5865f2;
+
+    box-shadow:
+        0 0 0 3px rgba(88, 101, 242, 0.12);
+}
+
+.rate-control input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 12px 15px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: #f2f2f2;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.rate-unit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    min-width: 105px;
+    padding: 0 14px;
+
+    background: #191d23;
+    border-left: 1px solid #343943;
+
+    white-space: nowrap;
+}
+
+.rate-unit strong {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.rate-unit span {
+    color: #8f959f;
+    font-size: 12px;
+    font-weight: 600;
+}
