@@ -10,13 +10,14 @@ const creditBudgetInput =
 const rateInput =
     document.getElementById("budgetBlockRate");
 
-
 const gearAll =
     document.getElementById("budgetGearAll");
 
 const gearCheckboxes =
     Array.from(
-        document.querySelectorAll(".budget-gear-checkbox")
+        document.querySelectorAll(
+            ".budget-gear-checkbox"
+        )
     );
 
 
@@ -47,10 +48,13 @@ const ITEM_NAMES = {
 
 
 // --------------------------------------
-// FORMATTING
+// FORMAT
 // --------------------------------------
 
-function formatNumber(value, decimals = 2) {
+function formatNumber(
+    value,
+    decimals = 2
+) {
 
     return Number(value).toLocaleString(
         undefined,
@@ -64,7 +68,10 @@ function formatNumber(value, decimals = 2) {
 
 function formatCredits(value) {
 
-    return `${formatNumber(value, 2)}c`;
+    return (
+        formatNumber(value, 2) +
+        "c"
+    );
 
 }
 
@@ -72,10 +79,19 @@ function formatCredits(value) {
 function stageName(stage) {
 
     if (stage.type === "boss") {
-        return `BOSS • ${stage.name}`;
+
+        return (
+            "BOSS • " +
+            stage.name
+        );
+
     }
 
-    return `${stage.world} • ${stage.name}`;
+    return (
+        stage.world +
+        " • " +
+        stage.name
+    );
 
 }
 
@@ -89,8 +105,11 @@ function makeStageOption(stage) {
     const option =
         document.createElement("option");
 
-    option.value = stage.id;
-    option.textContent = stageName(stage);
+    option.value =
+        stage.id;
+
+    option.textContent =
+        stageName(stage);
 
     return option;
 
@@ -99,7 +118,8 @@ function makeStageOption(stage) {
 
 function populateStages() {
 
-    currentStageSelect.innerHTML = "";
+    currentStageSelect.innerHTML =
+        "";
 
     progression.forEach(stage => {
 
@@ -113,18 +133,25 @@ function populateStages() {
 
 
 // --------------------------------------
-// GEAR MULTI-SELECT
+// GEAR SELECTOR
 // --------------------------------------
 
 function getSelectedGears() {
 
     if (gearAll.checked) {
+
         return ["all"];
+
     }
 
+
     return gearCheckboxes
-        .filter(box => box.checked)
-        .map(box => box.value);
+        .filter(
+            box => box.checked
+        )
+        .map(
+            box => box.value
+        );
 
 }
 
@@ -134,16 +161,22 @@ function updateGearControls() {
     const allSelected =
         gearAll.checked;
 
+
     gearCheckboxes.forEach(box => {
 
         box.disabled =
             allSelected;
 
+
         if (allSelected) {
-            box.checked = false;
+
+            box.checked =
+                false;
+
         }
 
     });
+
 
     calculateBudget();
 
@@ -160,10 +193,7 @@ function getStageCost(
     blockRate
 ) {
 
-    // ------------------------------
-    // MINES
-    // ------------------------------
-
+    // MINE
     if (stage.type === "mine") {
 
         let blocks = 0;
@@ -183,7 +213,8 @@ function getStageCost(
                     0
                 );
 
-            foundAny = blocks > 0;
+            foundAny =
+                blocks > 0;
 
         }
 
@@ -199,7 +230,8 @@ function getStageCost(
                     blocks +=
                         stage.items[gear];
 
-                    foundAny = true;
+                    foundAny =
+                        true;
 
                 }
 
@@ -209,19 +241,19 @@ function getStageCost(
 
 
         return {
+
             credits:
                 blocks / blockRate,
 
             skipped:
                 !foundAny
+
         };
 
     }
 
 
-    // ------------------------------
-    // BOSSES
-    // ------------------------------
+    // BOSS
 
     let fragments = 0;
     let foundAny = false;
@@ -247,12 +279,18 @@ function getStageCost(
 
     else {
 
+        const bossItems =
+            new Set();
+
+
         selectedGears.forEach(gear => {
 
-            let bossGear = gear;
+            let bossGear =
+                gear;
 
 
-            // Boss tool cost
+            // Axe and Shovel use the
+            // boss's generic tool cost.
             if (
                 gear === "axe" ||
                 gear === "shovel"
@@ -264,15 +302,28 @@ function getStageCost(
             }
 
 
+            // Prevent Pickaxe + Axe + Shovel
+            // from charging the same boss
+            // tool cost multiple times.
+            bossItems.add(
+                bossGear
+            );
+
+        });
+
+
+        bossItems.forEach(item => {
+
             if (
-                stage.items[bossGear] !==
+                stage.items[item] !==
                 undefined
             ) {
 
                 fragments +=
-                    stage.items[bossGear];
+                    stage.items[item];
 
-                foundAny = true;
+                foundAny =
+                    true;
 
             }
 
@@ -282,19 +333,21 @@ function getStageCost(
 
 
     return {
+
         credits:
             fragments /
             stage.fragmentsPerCredit,
 
         skipped:
             !foundAny
+
     };
 
 }
 
 
 // --------------------------------------
-// CALCULATOR
+// CALCULATE
 // --------------------------------------
 
 function calculateBudget() {
@@ -314,16 +367,27 @@ function calculateBudget() {
 
 
     if (
-        !Number.isFinite(availableCredits) ||
+        !Number.isFinite(
+            availableCredits
+        ) ||
         availableCredits < 0 ||
-        !Number.isFinite(rateMillions) ||
+        !Number.isFinite(
+            rateMillions
+        ) ||
         rateMillions <= 0
     ) {
 
-        reachEl.textContent = "—";
-        usedEl.textContent = "—";
-        leftEl.textContent = "—";
-        nextEl.textContent = "—";
+        reachEl.textContent =
+            "—";
+
+        usedEl.textContent =
+            "—";
+
+        leftEl.textContent =
+            "—";
+
+        nextEl.textContent =
+            "—";
 
         return;
 
@@ -339,11 +403,12 @@ function calculateBudget() {
 
 
     if (currentIndex < 0) {
+
         return;
+
     }
 
 
-    // No gear selected
     if (
         !selectedGears.includes("all") &&
         selectedGears.length === 0
@@ -364,6 +429,7 @@ function calculateBudget() {
 
         nextEl.textContent =
             "Select gear";
+
 
         breakdownEl.innerHTML = `
             <div class="warning">
@@ -386,14 +452,15 @@ function calculateBudget() {
     let furthestStage =
         progression[currentIndex];
 
-    let nextStage = null;
+    let nextStage =
+        null;
 
-    let nextCost = 0;
+    let nextCost =
+        0;
 
     const rows = [];
 
 
-    // Start AFTER current stage
     for (
         let i = currentIndex + 1;
         i < progression.length;
@@ -412,47 +479,33 @@ function calculateBudget() {
             );
 
 
-        // No selected gear in this mine
         if (result.skipped) {
-
-            rows.push(`
-                <div class="stage">
-
-                    <div class="stage-name">
-                        ${stageName(stage)}
-                    </div>
-
-                    <div class="warning">
-                        None of your selected gear
-                        is available here.
-                    </div>
-
-                </div>
-            `);
 
             continue;
 
         }
 
 
-        // Not enough credits for next upgrade
         if (
             creditsUsed +
             result.credits >
             availableCredits
         ) {
 
-            nextStage = stage;
-            nextCost = result.credits;
+            nextStage =
+                stage;
+
+            nextCost =
+                result.credits;
 
             break;
 
         }
 
 
-        // Can afford it
         creditsUsed +=
             result.credits;
+
 
         furthestStage =
             stage;
@@ -540,15 +593,23 @@ function calculateBudget() {
     }
 
 
-    breakdownEl.innerHTML =
-        rows.length
-            ? rows.join("")
-            : `
-                <div class="warning">
-                    Your credits are not enough
-                    for the next applicable upgrade.
-                </div>
-            `;
+    if (rows.length > 0) {
+
+        breakdownEl.innerHTML =
+            rows.join("");
+
+    }
+
+    else {
+
+        breakdownEl.innerHTML = `
+            <div class="warning">
+                Not enough credits for the
+                next selected upgrade.
+            </div>
+        `;
+
+    }
 
 }
 
@@ -592,7 +653,7 @@ gearCheckboxes.forEach(box => {
 
 
 // --------------------------------------
-// INITIALIZE
+// START
 // --------------------------------------
 
 if (
