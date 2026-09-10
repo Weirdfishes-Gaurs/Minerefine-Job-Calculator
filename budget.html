@@ -11,7 +11,7 @@
 
     <title>Credit Budget Calculator</title>
 
-<script src="budget.js?v=3"></script>
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 
 <body>
@@ -32,6 +32,7 @@
 
     </nav>
 
+
     <main class="container">
 
         <header>
@@ -39,13 +40,14 @@
             <h1>Credit Budget</h1>
 
             <p>
-                See how far your credits can take an item.
+                See how far your credits can take your gear.
             </p>
 
         </header>
 
 
         <section class="calculator">
+
 
             <div class="field">
 
@@ -56,7 +58,7 @@
                 <select id="budgetCurrentStage"></select>
 
                 <small>
-                    This stage is already completed.
+                    You already have this stage completed.
                 </small>
 
             </div>
@@ -91,47 +93,6 @@
 
             <div class="field">
 
-                <label for="budgetGear">
-                    Gear
-                </label>
-
-                <select id="budgetGear">
-
-                    <option value="all">
-                        All Gear
-                    </option>
-
-                    <option value="sword">
-                        Sword
-                    </option>
-
-                    <option value="pickaxe">
-                        Pickaxe
-                    </option>
-
-                    <option value="axe">
-                        Axe
-                    </option>
-
-                    <option value="shovel">
-                        Shovel
-                    </option>
-
-                    <option value="armor">
-                        Armor
-                    </option>
-
-                    <option value="charm">
-                        Charm
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
                 <label for="budgetBlockRate">
                     Block Rate
                 </label>
@@ -159,6 +120,111 @@
                 </small>
 
             </div>
+
+
+            <div class="field gear-field">
+
+                <label>
+                    Gear
+                </label>
+
+                <div
+                    class="gear-selector"
+                    id="budgetGearSelector"
+                >
+
+                    <label class="gear-choice all-choice">
+
+                        <input
+                            type="checkbox"
+                            id="budgetGearAll"
+                            checked
+                        >
+
+                        <span>
+                            All Gear
+                        </span>
+
+                    </label>
+
+
+                    <div class="gear-choice-grid">
+
+                        <label class="gear-choice">
+                            <input
+                                type="checkbox"
+                                class="budget-gear-checkbox"
+                                value="sword"
+                                disabled
+                            >
+                            <span>Sword</span>
+                        </label>
+
+
+                        <label class="gear-choice">
+                            <input
+                                type="checkbox"
+                                class="budget-gear-checkbox"
+                                value="pickaxe"
+                                disabled
+                            >
+                            <span>Pickaxe</span>
+                        </label>
+
+
+                        <label class="gear-choice">
+                            <input
+                                type="checkbox"
+                                class="budget-gear-checkbox"
+                                value="axe"
+                                disabled
+                            >
+                            <span>Axe</span>
+                        </label>
+
+
+                        <label class="gear-choice">
+                            <input
+                                type="checkbox"
+                                class="budget-gear-checkbox"
+                                value="shovel"
+                                disabled
+                            >
+                            <span>Shovel</span>
+                        </label>
+
+
+                        <label class="gear-choice">
+                            <input
+                                type="checkbox"
+                                class="budget-gear-checkbox"
+                                value="armor"
+                                disabled
+                            >
+                            <span>Armor</span>
+                        </label>
+
+
+                        <label class="gear-choice">
+                            <input
+                                type="checkbox"
+                                class="budget-gear-checkbox"
+                                value="charm"
+                                disabled
+                            >
+                            <span>Charm</span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <small>
+                    Uncheck All Gear to choose specific items.
+                </small>
+
+            </div>
+
 
         </section>
 
@@ -236,8 +302,8 @@
     </main>
 
 
-    <script src="data.js?v=2"></script>
-    <script src="budget.js?v=2"></script>
+    <script src="data.js?v=3"></script>
+    <script src="budget.js?v=4"></script>
 
 </body>
 
