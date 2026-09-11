@@ -566,3 +566,177 @@ button {
     font-size: 12px;
     font-weight: 600;
 }
+/* ---------- PRICE LOOKUP ---------- */
+
+.price-search-wrap {
+    position: relative;
+}
+
+.price-results {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.price-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 16px 18px;
+
+    background: #15181d;
+
+    border: 1px solid #272b32;
+    border-radius: 11px;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.price-card:hover {
+    background: #191d22;
+    border-color: #373c45;
+}
+
+.price-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.price-name {
+    color: #f2f2f2;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.price-category {
+    color: #7f858f;
+
+    font-size: 12px;
+}
+
+.price-value {
+    flex-shrink: 0;
+
+    min-width: 66px;
+
+    padding: 7px 10px;
+
+    text-align: center;
+
+    color: #ffffff;
+    background: #252a45;
+
+    border: 1px solid #5865f2;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.price-tbd {
+    color: #e5b567;
+    background: #211e17;
+    border-color: #5d5031;
+}
+
+
+/* ---------- AUTOCOMPLETE ---------- */
+
+.price-suggestions {
+    position: absolute;
+
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+
+    display: none;
+
+    padding: 6px;
+
+    background: #15181d;
+
+    border: 1px solid #343943;
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    z-index: 100;
+}
+
+.price-suggestions.show {
+    display: block;
+}
+
+.price-suggestion {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    padding: 10px 11px;
+
+    background: transparent;
+    color: #d9dce1;
+
+    border: none;
+    border-radius: 7px;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.price-suggestion:hover {
+    background: #20242b;
+}
+
+.price-suggestion span {
+    overflow: hidden;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.price-suggestion strong {
+    flex-shrink: 0;
+
+    color: #9da3ad;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 500px) {
+
+    .price-card {
+        padding: 14px;
+    }
+
+    .price-name {
+        font-size: 14px;
+    }
+
+}
