@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Price Lookup</title>
+
+    <link rel="stylesheet" href="style.css?v=8">
+</head>
+
+<body>
+
+    <nav class="site-nav">
+
+        <a href="index.html">
+            Upgrade Path
+        </a>
+
+        <a href="materials.html">
+            Materials → Credits
+        </a>
+
+        <a href="budget.html">
+            Credit Budget
+        </a>
+
+        <a href="prices.html" class="active">
+            Price Lookup
+        </a>
+
+    </nav>
+
+
+    <main class="container">
+
+        <header>
+
+            <h1>Price Lookup</h1>
+
+            <p>
+                Search for an item to see its current rate.
+            </p>
+
+        </header>
+
+
+        <section class="calculator">
+
+            <div class="field">
+
+                <label for="priceSearch">
+                    Search
+                </label>
+
+                <div class="price-search-wrap">
+
+                    <input
+                        id="priceSearch"
+                        class="normal-input"
+                        type="text"
+                        placeholder="Search items..."
+                        autocomplete="off"
+                    >
+
+                    <div
+                        id="priceSuggestions"
+                        class="price-suggestions"
+                    ></div>
+
+                </div>
+
+                <small>
+                    Start typing an item name.
+                </small>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="priceCategory">
+                    Category
+                </label>
+
+                <select id="priceCategory">
+
+                    <option value="all">
+                        All Items
+                    </option>
+
+                    <option value="turrets">
+                        Turrets
+                    </option>
+
+                    <option value="enchant">
+                        Enchant Items
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="price-results"
+            id="priceResults"
+        ></section>
+
+
+        <div
+            id="noPriceResults"
+            class="warning"
+            style="display: none;"
+        >
+            No matching items found.
+        </div>
+
+    </main>
+
+
+    <script src="prices.js?v=1"></script>
+
+</body>
+
+</html>
