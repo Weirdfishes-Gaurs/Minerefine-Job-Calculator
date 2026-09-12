@@ -10,7 +10,8 @@ const WORLD_ORDER = [
     "Arctic",
     "Sculk",
     "Woodland",
-    "Trial Chambers"
+    "Trial Chambers",
+    "Ruins"
 ];
 
 const progression = [
@@ -999,13 +1000,211 @@ const progression = [
         "id": "boss-brass-colossus",
         "type": "boss",
         "name": "Brass Colossus",
-        "beforeWorld": null,
+        "beforeWorld": "Ruins",
         "fragmentsPerCredit": 1.5,
         "items": {
             "sword": 40,
             "pickaxe": 40,
             "armor": 160,
             "charm": 40
+        }
+    },
+    {
+        "id": "mine-ruins-rumble",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Rumble",
+        "items": {
+            "sword": 8379400000,
+            "pickaxe": 6279600000,
+            "armor": 35390000000,
+            "charm": 5520000000
+        },
+        "armorPieces": {
+            "helmet": 7080000000,
+            "chestplate": 11010000000,
+            "leggings": 9440000000,
+            "boots": 7860000000
+        }
+    },
+    {
+        "id": "mine-ruins-suspicious-sand",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Suspicious Sand",
+        "items": {
+            "sword": 12190000000,
+            "shovel": 11690000000,
+            "armor": 51470000000,
+            "charm": 8020000000
+        },
+        "armorPieces": {
+            "helmet": 10290000000,
+            "chestplate": 16020000000,
+            "leggings": 13730000000,
+            "boots": 11430000000
+        }
+    },
+    {
+        "id": "mine-ruins-marrow",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Marrow",
+        "items": {
+            "sword": 10130000000,
+            "pickaxe": 7593000000,
+            "armor": 42770000000,
+            "charm": 6670000000
+        },
+        "armorPieces": {
+            "helmet": 8550000000,
+            "chestplate": 13310000000,
+            "leggings": 11410000000,
+            "boots": 9500000000
+        }
+    },
+    {
+        "id": "mine-ruins-ceramic",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Ceramic",
+        "items": {
+            "sword": 11180000000,
+            "pickaxe": 8379600000,
+            "armor": 47220000000,
+            "charm": 7360000000
+        },
+        "armorPieces": {
+            "helmet": 9440000000,
+            "chestplate": 14690000000,
+            "leggings": 12600000000,
+            "boots": 10490000000
+        }
+    },
+    {
+        "id": "mine-ruins-scaffold",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Scaffold",
+        "items": {
+            "sword": 29790000000,
+            "axe": 28590000000,
+            "armor": 125860000000,
+            "charm": 19600000000
+        },
+        "armorPieces": {
+            "helmet": 25170000000,
+            "chestplate": 39160000000,
+            "leggings": 33560000000,
+            "boots": 27970000000
+        }
+    },
+    {
+        "id": "mine-ruins-sniffer-egg",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Sniffer Egg",
+        "items": {
+            "sword": 17610000000,
+            "pickaxe": 13200000000,
+            "armor": 74350000000,
+            "charm": 11600000000
+        },
+        "armorPieces": {
+            "helmet": 14860000000,
+            "chestplate": 23130000000,
+            "leggings": 19830000000,
+            "boots": 16530000000
+        }
+    },
+    {
+        "id": "mine-ruins-debris",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Debris",
+        "items": {
+            "sword": 30530000000,
+            "shovel": 28050000000,
+            "armor": 100820000000,
+            "charm": 15700000000
+        },
+        "armorPieces": {
+            "helmet": 20160000000,
+            "chestplate": 31370000000,
+            "leggings": 26890000000,
+            "boots": 22400000000
+        }
+    },
+    {
+        "id": "mine-ruins-zircon",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Zircon",
+        "items": {
+            "sword": 24830000000,
+            "pickaxe": 18620000000,
+            "armor": 81970000000,
+            "charm": 12780000000
+        },
+        "armorPieces": {
+            "helmet": 16390000000,
+            "chestplate": 25500000000,
+            "leggings": 21860000000,
+            "boots": 18220000000
+        }
+    },
+    {
+        "id": "mine-ruins-malice",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Malice",
+        "items": {
+            "sword": 38420000000,
+            "pickaxe": 28820000000,
+            "armor": 126680000000,
+            "charm": 19780000000
+        },
+        "armorPieces": {
+            "helmet": 25150000000,
+            "chestplate": 39490000000,
+            "leggings": 33830000000,
+            "boots": 28210000000
+        }
+    },
+    {
+        "id": "mine-ruins-rafter",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Rafter",
+        "items": {
+            "sword": 44520000000,
+            "axe": 40880000000,
+            "armor": 146960000000,
+            "charm": 22900000000
+        },
+        "armorPieces": {
+            "helmet": 29400000000,
+            "chestplate": 45690000000,
+            "leggings": 39200000000,
+            "boots": 32670000000
+        }
+    },
+    {
+        "id": "mine-ruins-relic",
+        "type": "mine",
+        "world": "Ruins",
+        "name": "Relic",
+        "items": {
+            "sword": 42070000000,
+            "pickaxe": 31560000000,
+            "armor": 138930000000,
+            "charm": 21650000000
+        },
+        "armorPieces": {
+            "helmet": 27790000000,
+            "chestplate": 43220000000,
+            "leggings": 37040000000,
+            "boots": 30880000000
         }
     }
 ];
